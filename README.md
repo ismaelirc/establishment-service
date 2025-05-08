@@ -161,3 +161,8 @@ pnpm prisma migrate deploy
 ```bash
 pnpm start:dev
 ```
+
+## 📄 License
+
+This project is licensed under the CC BY-NC-ND 4.0 License.  
+Not for commercial use. See the LICENSE file for details.
