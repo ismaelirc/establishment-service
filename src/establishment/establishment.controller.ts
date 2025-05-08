@@ -15,10 +15,13 @@ import { PaginationDto } from './dto/pagination.dto';
 import { EstablishmentService } from './establishment.service';
 
 @ApiTags('establishments')
-@Controller('establishment')
-export class EstablishmentController {
+@Controller({
+  version: '1',
+  path: 'establishment',
+})
+export class EstablishmentControllerV1 {
   constructor(private establishmentService: EstablishmentService) { }
-  private readonly logger = new Logger(EstablishmentController.name);
+  private readonly logger = new Logger(EstablishmentControllerV1.name);
 
   @ApiOperation({ summary: 'List establishments' })
   @ApiResponse({
