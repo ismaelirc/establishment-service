@@ -28,8 +28,8 @@ cd establishment-service
 docker-compose up --build
 ```
 
-A aplicação estará disponível em `http://localhost:3000`
-A documentação Swagger estará disponível em `http://localhost:3000/api`
+A aplicação estará disponível em `http://localhost:3000/v1`
+A documentação Swagger estará disponível em `http://localhost:3000/v1/docs`
 
 ## 📦 Estrutura do Projeto
 
@@ -53,7 +53,7 @@ establishment-service/
 
 ### Listar Estabelecimentos
 ```http
-GET /establishment
+GET /v1/establishment
 ```
 
 **Query Parameters:**
@@ -80,7 +80,7 @@ GET /establishment
 
 ### Buscar Estabelecimento por ID
 ```http
-GET /establishment/:id
+GET /v1/establishment/:id
 ```
 
 **Resposta:**
@@ -96,7 +96,7 @@ GET /establishment/:id
 
 ### Criar Estabelecimento
 ```http
-POST /establishment
+POST /v1/establishment
 ```
 
 **Body:**
@@ -138,7 +138,7 @@ Para acessar o banco de dados usando DBeaver ou outro cliente SQL:
 
 A documentação completa da API está disponível através do Swagger UI em:
 ```
-http://localhost:3000/api
+http://localhost:3000/v1/docs
 ```
 
 ## 🛠️ Desenvolvimento
