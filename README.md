@@ -127,8 +127,8 @@ O projeto utiliza PostgreSQL como banco de dados. As configurações de conexão
 - **Host**: localhost
 - **Porta**: 5432
 - **Database**: establishment-db
-- **Usuário**: establishment-user
-- **Senha**: 123
+- **Usuário**: XXXX-user
+- **Senha**: XXXX
 
 Para acessar o banco de dados usando DBeaver ou outro cliente SQL:
 1. Certifique-se de que o container está rodando
