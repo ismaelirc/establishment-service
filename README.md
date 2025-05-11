@@ -163,13 +163,19 @@ pnpm install
 
 3. Run Prisma migrations
 ```bash
-pnpm prisma migrate deploy
+npx prisma migrate deploy
 ```
 
 4. Start the development server
 ```bash
 pnpm start:dev
 ```
+
+## Health Monitoring
+
+The service includes a health check endpoint that monitors:
+- Database connectivity
+- Service status
 
 ## 📄 License
 
