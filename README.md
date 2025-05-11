@@ -36,6 +36,10 @@ The Swagger documentation will be available at `http://localhost:3000/v1/docs`
 ```
 establishment-service/
 ├── src/
+|   ├── health/
+│   │   ├── health.controller.ts
+│   │   ├── prisma.health.ts
+│   │   └── health.module.ts
 │   ├── establishment/
 │   │   ├── dto/
 │   │   ├── establishment.controller.ts
@@ -50,6 +54,11 @@ establishment-service/
 ```
 
 ## 📚 API Endpoints
+
+### Health Check
+- **GET** `/health`
+- Returns the health status of the service and its dependencies
+- Checks database connectivity
 
 ### List Establishments
 ```http
