@@ -1,37 +1,37 @@
 # Establishment Service API
 
-API REST para gerenciamento de estabelecimentos, construída com NestJS e PostgreSQL.
+REST API for establishment management, built with NestJS and PostgreSQL.
 
-## 🚀 Tecnologias
+## 🚀 Technologies
 
 - NestJS
 - PostgreSQL
 - Prisma ORM
 - Docker
-- Swagger (Documentação da API)
+- Swagger (API Documentation)
 
-## 📋 Pré-requisitos
+## 📋 Prerequisites
 
 - Docker
 - Docker Compose
 
-## 🔧 Instalação e Execução
+## 🔧 Installation and Execution
 
-1. Clone o repositório
+1. Clone the repository
 ```bash
-git clone [url-do-repositorio]
+git clone [repository-url]
 cd establishment-service
 ```
 
-2. Execute o projeto com Docker Compose
+2. Run the project with Docker Compose
 ```bash
 docker-compose up --build
 ```
 
-A aplicação estará disponível em `http://localhost:3000/v1`
-A documentação Swagger estará disponível em `http://localhost:3000/v1/docs`
+The application will be available at `http://localhost:3000/v1`
+The Swagger documentation will be available at `http://localhost:3000/v1/docs`
 
-## 📦 Estrutura do Projeto
+## 📦 Project Structure
 
 ```
 establishment-service/
@@ -49,26 +49,26 @@ establishment-service/
 └── package.json
 ```
 
-## 📚 Endpoints da API
+## 📚 API Endpoints
 
-### Listar Estabelecimentos
+### List Establishments
 ```http
 GET /v1/establishment
 ```
 
 **Query Parameters:**
-- `page` (opcional): Número da página (padrão: 1)
-- `limit` (opcional): Itens por página (padrão: 10)
+- `page` (optional): Page number (default: 1)
+- `limit` (optional): Items per page (default: 10)
 
-**Resposta:**
+**Response:**
 ```json
 {
   "data": [
     {
       "id": "uuid",
-      "name": "Nome do Estabelecimento",
+      "name": "Establishment Name",
       "document": "12345678901234",
-      "address": "Endereço do Estabelecimento",
+      "address": "Establishment Address",
       "phone": "11999999999"
     }
   ],
@@ -78,23 +78,23 @@ GET /v1/establishment
 }
 ```
 
-### Buscar Estabelecimento por ID
+### Get Establishment by ID
 ```http
 GET /v1/establishment/:id
 ```
 
-**Resposta:**
+**Response:**
 ```json
 {
   "id": "uuid",
-  "name": "Nome do Estabelecimento",
+  "name": "Establishment Name",
   "document": "12345678901234",
-  "address": "Endereço do Estabelecimento",
+  "address": "Establishment Address",
   "phone": "11999999999"
 }
 ```
 
-### Criar Estabelecimento
+### Create Establishment
 ```http
 POST /v1/establishment
 ```
@@ -102,62 +102,62 @@ POST /v1/establishment
 **Body:**
 ```json
 {
-  "name": "Nome do Estabelecimento",
+  "name": "Establishment Name",
   "document": "12345678901234",
-  "address": "Endereço do Estabelecimento",
+  "address": "Establishment Address",
   "phone": "11999999999"
 }
 ```
 
-**Resposta:**
+**Response:**
 ```json
 {
   "id": "uuid",
-  "name": "Nome do Estabelecimento",
+  "name": "Establishment Name",
   "document": "12345678901234",
-  "address": "Endereço do Estabelecimento",
+  "address": "Establishment Address",
   "phone": "11999999999"
 }
 ```
 
-## 🗄️ Banco de Dados
+## 🗄️ Database
 
-O projeto utiliza PostgreSQL como banco de dados. As configurações de conexão são:
+The project uses PostgreSQL as the database. Connection settings are:
 
 - **Host**: localhost
-- **Porta**: 5432
+- **Port**: 5432
 - **Database**: establishment-db
-- **Usuário**: XXXX-user
-- **Senha**: XXXX
+- **Username**: XXXX-user
+- **Password**: XXXX
 
-Para acessar o banco de dados usando DBeaver ou outro cliente SQL:
-1. Certifique-se de que o container está rodando
-2. Use as credenciais acima para conectar
+To access the database using DBeaver or another SQL client:
+1. Make sure the container is running
+2. Use the credentials above to connect
 
-## 🔍 Documentação da API
+## 🔍 API Documentation
 
-A documentação completa da API está disponível através do Swagger UI em:
+Complete API documentation is available through Swagger UI at:
 ```
 http://localhost:3000/v1/docs
 ```
 
-## 🛠️ Desenvolvimento
+## 🛠️ Development
 
-Para desenvolvimento local sem Docker:
+For local development without Docker:
 
-1. Instale as dependências
+1. Install dependencies
 ```bash
 pnpm install
 ```
 
-2. Configure o arquivo .env com as variáveis de ambiente necessárias
+2. Configure the .env file with the necessary environment variables
 
-3. Execute as migrations do Prisma
+3. Run Prisma migrations
 ```bash
 pnpm prisma migrate deploy
 ```
 
-4. Inicie o servidor de desenvolvimento
+4. Start the development server
 ```bash
 pnpm start:dev
 ```
