@@ -1,17 +1,20 @@
-version: '3.8'
 
 services:
   app:
     build: .
+    container_name: establishmentservice
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=postgresql://establishment-user:123@db:5432/establishment-db?schema=public
+      - DATABASE_URL=postgresql://establishment-user:123@establishment-db:5432/establishment-db?schema=public
     depends_on:
       - db
+    networks:
+      - shared-network
 
   db:
     image: postgres:16-alpine
+    container_name: establishment-db
     ports:
       - "5432:5432"
     environment:
@@ -20,6 +23,12 @@ services:
       - POSTGRES_DB=establishment-db
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - shared-network
 
 volumes:
   postgres_data: 
+  
+networks:
+  shared-network:
+    external: true
